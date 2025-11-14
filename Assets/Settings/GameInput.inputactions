@@ -1,0 +1,63 @@
+{
+    "version": 1,
+    "name": "GameInput",
+    "maps": [
+        {
+            "name": "LandMovement",
+            "id": "7ed0ea6c-6101-4363-ad69-0c2570a58af4",
+            "actions": [
+                {
+                    "name": "New action",
+                    "type": "Button",
+                    "id": "5361b514-c2be-49c0-a817-a62183cbfbc8",
+                    "expectedControlType": "",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                }
+            ],
+            "bindings": [
+                {
+                    "name": "",
+                    "id": "f3df84c9-975f-421b-adbd-612d404b425e",
+                    "path": "<Keyboard>/w",
+                    "interactions": "Hold",
+                    "processors": "",
+                    "groups": "",
+                    "action": "New action",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                }
+            ]
+        },
+        {
+            "name": "SeaMovement",
+            "id": "527586d1-7540-4c3f-9076-0c515bcbfaec",
+            "actions": [
+                {
+                    "name": "New action",
+                    "type": "Button",
+                    "id": "d7641e3d-f0f0-4305-bc33-0e65f3ec8f52",
+                    "expectedControlType": "",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                }
+            ],
+            "bindings": [
+                {
+                    "name": "",
+                    "id": "ffe783dc-3673-451f-b84d-b85510d22c7c",
+                    "path": "",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "New action",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                }
+            ]
+        }
+    ],
+    "controlSchemes": []
+}
