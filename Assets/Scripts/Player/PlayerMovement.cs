@@ -17,7 +17,7 @@ public class ThirdPersonMovement : MonoBehaviour
 
     private CharacterController controller;
     private Vector3 velocity;
-    private bool isGrounded;
+    [SerializeField] private bool isGrounded;
 
     private void Awake()
     {
@@ -93,7 +93,7 @@ public class ThirdPersonMovement : MonoBehaviour
         }
 
         // Jump
-        if (isGrounded && Keyboard.current != null && Keyboard.current.spaceKey.wasPressedThisFrame)
+        if (isGrounded && Keyboard.current.spaceKey.isPressed)
         {
             velocity.y = Mathf.Sqrt(jumpHeight * -2f * gravity);
             Debug.Log("JUMP!");
