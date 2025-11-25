@@ -6,6 +6,7 @@ public class ThirdPersonMovement : MonoBehaviour
 {
     [Header("Movement")]
     [SerializeField] private float moveSpeed = 5f;
+    [SerializeField] private float swimSpeed = 2.5f;
     [SerializeField] private float rotationSpeed = 10f;
 
     [Header("Jump / Gravity")]
@@ -17,7 +18,9 @@ public class ThirdPersonMovement : MonoBehaviour
 
     private CharacterController controller;
     private Vector3 velocity;
-    [SerializeField] private bool isGrounded;
+    private bool isGrounded;
+    private bool isJumping;
+    private bool isSwimming;
 
     private void Awake()
     {
@@ -32,8 +35,15 @@ public class ThirdPersonMovement : MonoBehaviour
 
     private void Update()
     {
-        HandleMovement();
-        HandleGravityAndJump();
+        if (isSwimming)
+        {
+            HandleSwimming();
+        }
+        else
+        {
+            HandleMovement();
+            HandleGravityAndJump();
+        }
     }
 
     private void HandleMovement()
@@ -90,6 +100,7 @@ public class ThirdPersonMovement : MonoBehaviour
         {
             // Small downward force to keep grounded
             velocity.y = -2f;
+            isJumping = false;
         }
 
         // Jump
@@ -97,11 +108,21 @@ public class ThirdPersonMovement : MonoBehaviour
         {
             velocity.y = Mathf.Sqrt(jumpHeight * -2f * gravity);
             Debug.Log("JUMP!");
+
+            isJumping = true;
         }
 
         // Gravity
         velocity.y += gravity * Time.deltaTime;
 
         controller.Move(velocity * Time.deltaTime);
+    }
+
+    private void HandleSwimming()
+    {
+        if (isSwimming)
+        {
+
+        }
     }
 }
